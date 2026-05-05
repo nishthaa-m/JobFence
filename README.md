@@ -1,10 +1,10 @@
-# 🛡️ JobFence AI
+# 🛡️JobFence
 
 JobFence AI is an intelligent verification system designed to detect fraudulent job postings and internships. By analyzing job descriptions from various sources (PDFs, text, and web links), JobFence uses NLP to evaluate the legitimacy of opportunities, extract key details, and flag potential scams before you apply.
 
 ---
 
-## ✨ Features
+## ✨Features
 
 * ✅ **Fraud Detection & Scoring**: AI-powered analysis to rate the authenticity of a job posting.
 * 📄 **Multi-Format Support**: Upload job details via PDF documents, plain text, or direct web links.
@@ -14,7 +14,7 @@ JobFence AI is an intelligent verification system designed to detect fraudulent 
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️Tech Stack
 
 | Component      | Technology                |
 | -------------- | ------------------------- |
@@ -26,7 +26,7 @@ JobFence AI is an intelligent verification system designed to detect fraudulent 
 
 ---
 
-## 📦 Prerequisites
+## 📦Prerequisites
 
 * Node.js v18+
 * Python 3.9+ (recommend using 3.11)
@@ -34,7 +34,7 @@ JobFence AI is an intelligent verification system designed to detect fraudulent 
 
 ---
 
-## ⚙️ Installation
+## ⚙️Installation
 
 ### 1. Clone Repository
 
@@ -94,7 +94,7 @@ npm run dev
 
 ---
 
-## 📁 Project Structure
+## 📁Project Structure
 
 ```
 JobFence/
@@ -118,7 +118,7 @@ JobFence/
 
 ---
 
-## 🛠️ Troubleshooting
+## 🛠️Troubleshooting
 
 | Error                        | Solution                                                  |
 | ---------------------------- | --------------------------------------------------------- |
