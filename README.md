@@ -1,16 +1,16 @@
-# 🧠 JobFence AI
+# 🛡️ JobFence AI
 
-An intelligent resume analysis system that evaluates resumes against target job requirements using NLP and provides actionable feedback.
+JobFence AI is an intelligent verification system designed to detect fraudulent job postings and internships. By analyzing job descriptions from various sources (PDFs, text, and web links), JobFence uses NLP to evaluate the legitimacy of opportunities, extract key details, and flag potential scams before you apply.
 
 ---
 
 ## ✨ Features
 
-* ✅ AI-powered resume scoring & skill extraction
-* 📄 Supports PDF, DOCX, and plain text formats
-* 🎯 Targeted job role templates (Data Scientist, Web Developer, etc.)
-* 📊 Visual skill matching and score breakdown
-* 💡 Actionable improvement recommendations
+* ✅ **Fraud Detection & Scoring**: AI-powered analysis to rate the authenticity of a job posting.
+* 📄 **Multi-Format Support**: Upload job details via PDF documents, plain text, or direct web links.
+* 🚩 **Red Flag Identification**: Automatically detects suspicious language, unrealistic compensation, or missing crucial details.
+* 📊 **Visual Trust Score**: See a clear breakdown of why a job posting is considered safe or risky.
+* 💡 **Actionable Feedback**: Get recommendations on what to verify with the employer before proceeding.
 
 ---
 
@@ -21,7 +21,7 @@ An intelligent resume analysis system that evaluates resumes against target job 
 | Frontend       | React 18 + TypeScript     |
 | Styling        | Tailwind CSS + shadcn/ui  |
 | Backend        | Python Flask              |
-| NLP Processing | spaCy + en\_core\_web\_sm |
+| NLP Processing | spaCy + en_core_web_sm    |
 | Build Tool     | Vite                      |
 
 ---
@@ -36,23 +36,18 @@ An intelligent resume analysis system that evaluates resumes against target job 
 
 ## ⚙️ Installation
 
-### 1. Clone Repository with Git LFS
+### 1. Clone Repository
 
 ```bash
 git lfs install
-git clone https://github.com/Mzuhaibkhan/resume-ai0.2.git
-cd resume_ai
+git clone https://github.com/nishthaa-m/JobFence.git
+cd JobFence
 ```
 
 ### 2. Backend Setup
 
 ```bash
 cd backend
-
-# Check your Python version (Use Python 3.11.9 for better setup)
-python --version
-# or if multiple versions installed:
-# py -3.11 --version
 
 # Create virtual environment
 # On Windows:
@@ -67,15 +62,15 @@ source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
+
 ### 3. Start Backend (from `/backend`):
 
 ```bash
 flask run --port 5000 --debug
 ```
-("Resume AI backend is running!" should be displayed on port 5000)
+(Backend will be running on port 5000)
 
-
-> 📦 Includes Flask, flask-cors, spaCy, python-docx, PyMuPDF, and en\_core\_web\_sm via direct URL.
+> 📦 Includes Flask, flask-cors, spaCy, PyMuPDF, and other NLP dependencies.
 
 If needed, install spaCy model manually:
 
@@ -95,30 +90,30 @@ npm install
 ```bash
 npm run dev
 ```
-(The website must be opened on port 8080 and the website is ready to be used)
+(The app will be available on the port specified by Vite, usually 5173 or 8080)
 
 ---
 
 ## 📁 Project Structure
 
 ```
-resume_ai/
-🔺 backend/
-│   🔺 app/
-│   │   🔺 __init__.py      # App initialization
-│   │   🔺 analyzer.py      # Core analysis logic
-│   │   🔺 routes.py        # API routes
-│   │   🔺 ...              # other files
-│   🔺 requirements.txt     # Python dependencies
-🔺 frontend/
-│   🔺 public/              # Static assets
-│   🔺 src/
-│   │   🔺 api/             # API service handlers
-│   │   🔺 components/      # React UI components
-│   │   🔺 types/           # TypeScript interfaces
-│   │   🔺 main.tsx         # App entry
-│   🔺 vite.config.ts       # Build config
-🔺 README.md                # This file
+JobFence/
+├── backend/
+│   ├── app/
+│   │   ├── __init__.py      # App initialization
+│   │   ├── analyzer.py      # Core NLP and fraud analysis logic
+│   │   ├── routes.py        # API routes
+│   │   └── ...              
+│   └── requirements.txt     # Python dependencies
+├── frontend/
+│   ├── public/              # Static assets
+│   ├── src/
+│   │   ├── api/             # API service handlers
+│   │   ├── components/      # React UI components (Verifier, Uploader, etc.)
+│   │   ├── types/           # TypeScript interfaces
+│   │   └── main.tsx         # App entry
+│   └── vite.config.ts       # Build config
+└── README.md                # This file
 ```
 
 ---
@@ -130,10 +125,9 @@ resume_ai/
 | ModuleNotFoundError          | Reinstall requirements: `pip install -r requirements.txt` |
 | spaCy model missing          | Run: `python -m spacy download en_core_web_sm`            |
 | fitz (PyMuPDF) not found     | Run: `pip install PyMuPDF`                                |
-| docx not found               | Run: `pip install python-docx`                            |
 | Python not found             | Reinstall Python and ensure it's added to PATH            |
-| App Execution Alias conflict | Disable "python.exe" alias in App Execution Aliases       |
+| App Execution Alias conflict | Disable "python.exe" alias in Windows Settings            |
 
 ---
 
-📅 All set! Start building your AI-powered JobFence!
+📅 **Stay safe and secure! Start verifying jobs with JobFence!**
