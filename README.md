@@ -4,7 +4,7 @@ JobFence AI is an intelligent verification system designed to detect fraudulent 
 
 ---
 
-## ✨Features
+## Features
 
 * ✅ **Fraud Detection & Scoring**: AI-powered analysis to rate the authenticity of a job posting.
 * 📄 **Multi-Format Support**: Upload job details via PDF documents, plain text, or direct web links.
