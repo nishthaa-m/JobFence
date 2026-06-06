@@ -1,7 +1,23 @@
+export interface RuleFlag {
+  rule: string;
+  severity: 'high' | 'medium' | 'low';
+  message: string;
+}
+
 export interface VerificationResult {
   score: number;
-  matched_skills: Record<string, number>;
-  missing_skills: Record<string, number>;
-  recommendations: string[];
   target_job: string;
+  tier1_llm: {
+    score: number;
+    explanation: string;
+    suggestions: string[];
+  };
+  tier2_rules: {
+    score: number;
+    flags: RuleFlag[];
+  };
+  tier3_ml: {
+    score: number;
+    scam_probability: number;
+  };
 }
