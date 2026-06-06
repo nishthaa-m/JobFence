@@ -1,9 +1,18 @@
-export async function verifyInternship(file: File, targetJob: string | null) {
+export async function verifyInternship(
+  input: { file: File | null; text: string | null },
+  targetJob: string | null
+) {
   const formData = new FormData();
-  formData.append("file", file);
+  if (input.file) {
+    formData.append("file", input.file);
+  }
+  if (input.text) {
+    formData.append("text", input.text);
+  }
   if (targetJob) formData.append("target_job", targetJob);
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 
   try {
     const response = await fetch(`${API_URL}/analyze`, {
