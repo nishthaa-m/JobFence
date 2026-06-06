@@ -106,11 +106,27 @@ class JobScamClassifier:
 
 
 # JobFence analysis orchestrator
+def load_env():
+    try:
+        # Look for .env in the parent directory (backend/)
+        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), '.env')
+        if os.path.exists(env_path):
+            with open(env_path, 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith('#') and '=' in line:
+                        key, val = line.split('=', 1)
+                        os.environ[key.strip()] = val.strip()
+    except Exception as e:
+        print(f"Error loading manual .env: {e}")
+
 class JobFenceDetector:
     def __init__(self):
+        load_env()
         self.classifier = JobScamClassifier()
         # Default n8n URL (can be customized via environment variable)
-        self.n8n_webhook_url = os.environ.get("N8N_WEBHOOK_URL", "http://localhost:5678/webhook/jobfence")
+        self.n8n_webhook_url = os.environ.get("N8N_WEBHOOK_URL", "http://localhost:5678/webhook/check-job-offer")
+
 
     def call_n8n_webhook(self, payload: Dict[str, Any]) -> Tuple[int, str, List[str]]:
         """Calls n8n webhook and falls back gracefully to a mock agent response if offline."""
